@@ -1,0 +1,67 @@
+body {
+    color: rgba(0,0,0,.65);
+    list-style: none;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.card {
+    border: 1px solid #f5f5f5;
+    border-radius: none;
+}
+.ant-col.css-dev-only-do-not-override-1vtf12y {
+    padding: 0 !important;
+}
+
+h3 {
+    margin-top: 0;
+    color: rgba(0,0,0,.85);
+    font-weight: 500;
+}
+
+.cardHeadImage{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+}
+
+.card .ant-card-actions {
+    background-color: rgb(250,250,250);
+    font-size: 20px;
+}
+
+.ant-card-bordered {
+    border: 1px solid #e8e8e8;
+}
+.ant-card-meta-description {
+    font-size: 15px;
+}
+
+.anticon-heart {
+    font-size: 20px !important;
+}
+.anticon {
+    font-size: 18px !important;
+}
+  
+
+.ant-card-meta-description p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+.ant-card-meta-description p > .anticon {
+    font-size: 18px;
+    color: rgba(0,0,0,.85);
+}
+  
+.ant-row {
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
