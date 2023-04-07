@@ -9,6 +9,7 @@ body {
     border: 1px solid #f5f5f5;
     border-radius: none;
 }
+
 .ant-col.css-dev-only-do-not-override-1vtf12y {
     padding: 0 !important;
 }
@@ -34,6 +35,7 @@ h3 {
 .ant-card-bordered {
     border: 1px solid #e8e8e8;
 }
+
 .ant-card-meta-description {
     font-size: 15px;
 }
@@ -41,11 +43,11 @@ h3 {
 .anticon-heart {
     font-size: 20px !important;
 }
+
 .anticon {
     font-size: 18px !important;
 }
   
-
 .ant-card-meta-description p {
     display: flex;
     align-items: center;
@@ -53,7 +55,7 @@ h3 {
     padding-bottom: 5px;
     font-size: 14px;
     line-height: 1.5;
-  }
+}
 
 .ant-card-meta-description p > .anticon {
     font-size: 18px;
@@ -62,6 +64,7 @@ h3 {
   
 .ant-row {
     display: flex !important;
-    justify-content: space-around !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
 }
 

@@ -1,5 +1,3 @@
-import "./UserModal.css";
-
 import { Divider, Form, Input, Modal } from 'antd';
 
 import axios from "axios";
