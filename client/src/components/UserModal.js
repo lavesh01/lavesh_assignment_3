@@ -2,6 +2,7 @@ import "./UserModal.css";
 
 import { Divider, Form, Input, Modal } from 'antd';
 
+import axios from "axios";
 import { useState } from 'react';
 
 const UserModal = ({ user, open, onCancel, onOk }) => {
@@ -12,13 +13,16 @@ const UserModal = ({ user, open, onCancel, onOk }) => {
     try {
       setLoading(true);
       const values = await form.validateFields();
-      onOk({ ...user, ...values });
+      const updatedUser = { ...user, ...values };
+      await axios.put(`http://localhost:3001/update/user/${user._id}`, updatedUser);
+      onOk(updatedUser);
       setLoading(false);
     } catch (error) {
       console.log(error);
       setLoading(false);
     }
   };
+  
 
   return (
     <Modal

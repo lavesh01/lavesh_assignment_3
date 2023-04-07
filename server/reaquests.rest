@@ -1,0 +1,43 @@
+GET http://localhost:3001/users
+
+
+####
+POST http://localhost:3001/new/user
+Content-Type: application/json
+
+  {
+    "id": 10,
+    "name": "Clementina DuBuque",
+    "username": "Moriah.Stanton",
+    "email": "Rey.Padberg@karina.biz",
+    "address": {
+      "street": "Kattie Turnpike",
+      "suite": "Suite 198",
+      "city": "Lebsackbury",
+      "zipcode": "31428-2261",
+      "geo": {
+        "lat": "-38.2386",
+        "lng": "57.2232"
+      }
+    },
+    "phone": "024-648-3804",
+    "website": "ambrose.net",
+    "company": {
+      "name": "Hoeger LLC",
+      "catchPhrase": "Centralized empowering task-force",
+      "bs": "target end-to-end models"
+    }
+  }
+  
+
+###
+PUT http://localhost:3001/update/user/643078f9514639466b1d1c18
+Content-Type: application/json
+
+{
+    "name": "lavesh",
+}
+
+
+####
+DELETE http://localhost:3001/delete/user

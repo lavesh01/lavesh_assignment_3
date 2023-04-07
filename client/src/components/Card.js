@@ -14,10 +14,9 @@ const Cards = () => {
   const [users, setUsers] = useState([]);
   const [editingUser, setEditingUser] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [ likedUsers, setLikedUsers] = useState([]);
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/users')
+    axios.get('http://localhost:3001/users')
       .then(response => {
         setUsers(response.data);
       })
@@ -30,6 +29,7 @@ const Cards = () => {
   const handleEditClick = (user) => {
     setEditingUser(user);
     setIsModalOpen(true);
+    
   };
 
 
@@ -41,15 +41,28 @@ const handleSave = (updatedUser) => {
 };
 
  
-const handleDelete = (user) => {
-  setUsers((prevUsers) => prevUsers.filter((u) => u.id !== user.id));
+const handleDelete = async (user) => {
+  try {
+    const res = await axios.delete(`http://localhost:3001/delete/user/${user._id}`,user)
+    const updatedUser = res.data;
+
+    setUsers((prevUsers) => prevUsers.filter((u) => u.id !== updatedUser.id));
+
+  }catch (error){
+    console.log(error);
+  }
 };
 
-const handleLike = (user) => {
-  if (likedUsers.includes(user.id)) {
-    setLikedUsers(likedUsers.filter((id) => id !== user.id));
-  } else {
-    setLikedUsers([...likedUsers, user.id]);
+
+const handleLike = async (user) => {
+  try {
+    const updatedUser = { ...user, like: !user.like };
+    await axios.put(`http://localhost:3001/update/user/${user._id}`, updatedUser);
+
+    setUsers((prevUsers) => prevUsers.map((u) => (u.id === updatedUser.id ? updatedUser : u)));
+
+  } catch (error) {
+    console.log(error);
   }
 };
 
@@ -63,11 +76,11 @@ const handleLike = (user) => {
           <Card
             cover={<div className="cardHeadImage"> <img alt={user.name} src={`https://avatars.dicebear.com/v2/avataaars/${user.username}.svg?options[mood][]=happy`} style={{background:"#f5f5f5" , width: "200px", height: "200px;"}}/></div>}
             actions={[
-                likedUsers.includes(user.id) ? (
-                  <HeartFilled style={{ color:"rgb(255, 0, 0)" }} onClick={() => handleLike(user)} />
-                ) : (
-                  <HeartTwoTone twoToneColor="rgb(255, 0, 0)" onClick={() => handleLike(user)} />
-                ),
+                  user.like ? (
+                    <HeartFilled style={{ color: 'rgb(255, 0, 0)' }} onClick={() => handleLike(user)} />
+                  ) : (
+                    <HeartTwoTone twoToneColor="rgb(255, 0, 0)" onClick={() => handleLike(user)} />
+                  ),
                 <EditOutlined onClick={() => handleEditClick(user)} />,
                 <DeleteFilled onClick={() => handleDelete(user)}/>,
             ]}
