@@ -15,7 +15,7 @@ Make sure you have Node.js and npm installed on your machine.
 1. Clone the repository to your local machine.
 
 ```
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/lavesh01/lavesh_assignment_3.git
 ```
 
 2. Install the necessary packages.
@@ -27,12 +27,12 @@ npm install
 
 1. Start the backend server.
 ```
-npm run server
+npm start
 ```
 
 2. Start the frontend server.
 ```
-npm run client
+npm start
 ```
 
 3. Access the application on your browser at http://localhost:3000.
