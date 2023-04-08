@@ -3,6 +3,8 @@
 This is a MERN (MongoDB, Express, React, Node.js) stack web application that allows you to manage user data. The backend is built with Node.js and Express and the frontend is built with React.
 The application allows you to view, edit, delete and like user data. All activity is stored in the backend and when the data is being fetched from the backend, a loader appears on the screen.
 
+Here is the live link for the web app using reactjs :  https://user-56ba1.web.app
+
 
 <img width="960" alt="sss" src="https://user-images.githubusercontent.com/79662096/230684628-5608b863-f62c-4618-8af9-aa3f002ba4f5.PNG">
 
